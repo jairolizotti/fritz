@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  student_id: 1
+  classroom_id: 1
+  paid: false
+
+two:
+  student_id: 1
+  classroom_id: 1
+  paid: false

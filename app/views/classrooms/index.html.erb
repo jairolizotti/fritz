@@ -1,0 +1,8 @@
+<h1>Lista de turmas</h1>
+<ul>
+  <% @classrooms.each do |classroom| %>
+    <li>
+      <%= classroom.room %>
+    </li>
+  <% end %>
+</ul>
