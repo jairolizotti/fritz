@@ -3,7 +3,8 @@
 <ul>
   <% @classrooms.each do |classroom| %>
     <li>
-      <%= classroom.room %>
+      <%= classroom.room %> - 
+      <%= classroom.instructor.nil? ? "Sem instrutor" : classroom.instructor.name %>
     </li>
   <% end %>
 </ul>
