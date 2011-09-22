@@ -1,4 +1,6 @@
 Aula1::Application.routes.draw do
+  resources :courses
+
   resources :classrooms, :only => [:index, :new, :create]
   root :to => 'classrooms#index'
 
