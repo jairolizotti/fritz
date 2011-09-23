@@ -1,10 +1,7 @@
-<h1>Lista de turmas</h1>
-<%= link_to "Nova turma", new_classroom_path %>
-<ul>
-  <% @classrooms.each do |classroom| %>
-    <li>
-      <%= classroom.room %> - 
-      <%= classroom.instructor.nil? ? "Sem instrutor" : classroom.instructor.name %>
-    </li>
-  <% end %>
-</ul>
+<h1>Turmas</h1>
+<div id = "form">
+  <%= render "form" %>
+</div>
+<div id = "classrooms">
+  <%= render "list" %>
+</div>

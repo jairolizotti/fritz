@@ -1,0 +1,19 @@
+<%= form_for @classroom, :remote => true do |form| %>
+  <% if @classroom.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@classroom.errors.count, "erros") %> encontrados:</h2>  
+      <ul>
+        <% @classroom.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>  
+      </ul>  
+    </div>  
+  <% end %>
+  <%= form.label :room %>
+  <%= form.text_field :room %>
+  <%= form.label :capacity %>
+  <%= form.text_field :capacity %>
+  <%= form.label :instructor_id %>
+  <%= form.select :instructor_id, Instructor.all.map{|i| [i.name, i.id]}, :include_blank => true %>
+  <%= form.submit %>
+<% end %>

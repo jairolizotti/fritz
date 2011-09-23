@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Aula1</title>
-  <%# stylesheet_link_tag    "application" %>
-  <%# javascript_include_tag "application" %>
+  <title>Fritz</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <nav>
+    <%= link_to "Cursos", courses_path %>
+    <%= link_to "Turmas", classrooms_path %>
+  </nav>
 <%= yield %>
 
 </body>

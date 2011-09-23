@@ -7,3 +7,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+jQuery(function($) {
+  $("#new_classroom")
+    .bind("ajax:success", function(event, data, status, xhr) {
+      $("#classrooms").html(data);
+    })
+    .bind("ajax:error", function(evt, xhr, status, error) {
+      $("#form").html(xhr.responseText);
+      $("#new_classroom")
+        .bind("ajax:success", function(event, data, status, xhr) {
+          $("#classrooms").html(data);
+        })
+        .bind("ajax:error", function(evt, xhr, status, error) {
+          $("#form").html(xhr.responseText);
+        });
+    });
+});

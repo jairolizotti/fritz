@@ -1,18 +1,18 @@
 class ClassroomsController < ApplicationController
   def index
-    @classrooms = Classroom.all
-  end
-
-  def new
     @classroom = Classroom.new
   end
 
   def create
     @classroom = Classroom.create params[:classroom]
-    if @classroom.valid?
-      redirect_to classrooms_path
-    else
-      render :new
+    respond_to do |format|
+      if @classroom.valid?
+        format.html { redirect_to classrooms_path }
+        format.js { render :partial => "list", :content_type => 'text/html' }
+      else
+        format.html { render :index }
+        format.js { render :partial => "form", :content_type => "text/html", :status => :unprocessable_entity }
+      end
     end
   end
 end

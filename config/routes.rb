@@ -1,7 +1,7 @@
 Aula1::Application.routes.draw do
   resources :courses
 
-  resources :classrooms, :only => [:index, :new, :create]
+  resources :classrooms, :only => [:index, :create]
   root :to => 'classrooms#index'
 
   # The priority is based upon order of creation:
