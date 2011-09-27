@@ -1,4 +1,6 @@
 class ClassroomsController < ApplicationController
+  before_filter :authorize, :only => [:create]
+
   def index
     @classroom = Classroom.new
   end

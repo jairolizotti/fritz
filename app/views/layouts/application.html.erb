@@ -7,10 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <p>
+    <% if signed_in? %>
+      Olá <%= current_user.email %> | 
+      <%= link_to "Sair", session_path(current_user.id), :method => :delete %>
+    <% else %>
+      <%= link_to "Entrar", new_session_path %>
+    <% end %>
+  </p>
   <nav>
     <%= link_to "Cursos", courses_path %>
     <%= link_to "Turmas", classrooms_path %>
   </nav>
+  <p style="color:red"><%= flash[:alert] %></p>
+  <p style="color:green"><%= flash[:notice] %></p>
 <%= yield %>
 
 </body>

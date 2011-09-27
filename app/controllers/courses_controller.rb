@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_filter :authorize, :except => [:index, :show]
+
   # GET /courses
   # GET /courses.json
   def index

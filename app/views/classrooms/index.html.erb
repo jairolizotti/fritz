@@ -1,7 +1,9 @@
 <h1>Turmas</h1>
-<div id = "form">
-  <%= render "form" %>
-</div>
+<% if signed_in? %>
+  <div id = "form">
+    <%= render "form" %>
+  </div>
+<% end %>
 <div id = "classrooms">
   <%= render "list" %>
 </div>

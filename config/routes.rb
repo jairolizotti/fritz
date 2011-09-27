@@ -1,4 +1,5 @@
 Aula1::Application.routes.draw do
+  resources :sessions, :only => [:new, :create, :destroy]
   resources :courses
 
   resources :classrooms, :only => [:index, :create]
