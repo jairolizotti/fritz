@@ -12,3 +12,5 @@ Classroom.create :room => "Sala 3", :capacity => 5, :instructor => Instructor.cr
 Classroom.create :room => "Sala 4", :capacity => 6, :instructor => Instructor.create(:name => "Wayne")
 Classroom.create :room => "Sala 5", :capacity => 10, :instructor => Instructor.create(:name => "Peter")
 Classroom.create :room => "Sala 6", :capacity => 15, :instructor => Instructor.create(:name => "Nicolas")
+
+User.create "nicolas@engage.is", "123456"
